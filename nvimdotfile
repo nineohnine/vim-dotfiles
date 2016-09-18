@@ -18,7 +18,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'tweekmonster/braceless.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'mhinz/vim-startify'
-
+Plug 'mustache/vim-mustache-handlebars'
 
 " In-file searching ala 'ack'
 Plug 'gabesoft/vim-ags'
@@ -221,3 +221,5 @@ let g:vim_markdown_frontmatter=1
 
 " Editorconfig exceptions
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+set ttimeoutlen=0
