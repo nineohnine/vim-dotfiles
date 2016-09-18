@@ -35,6 +35,9 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'tpope/vim-liquid'
 Plug 'chriskempson/base16-vim'
 
+
+
+
 " REStructuredText
 Plug 'Rykka/riv.vim'
 Plug 'Rykka/InstantRst'
@@ -123,7 +126,7 @@ autocmd FileType jinja,html setlocal shiftwidth=2 expandtab tabstop=2 softtabsto
 """""""""""""""""""""""""
 " We like spaces; avoid tabs. Set colorcolumn.
 "autocmd FileType python setlocal shiftwidth=4 expandtab tabstop=4 softtabstop=4 colorcolumn=80 omnifunc=pythoncomplete#Complete
-autocmd FileType python setlocal shiftwidth=4 expandtab tabstop=4 softtabstop=4 colorcolumn=80
+autocmd FileType python setlocal shiftwidth=4 expandtab tabstop=4 softtabstop=4
 
 " Braceless.vim configuration
 """""""""""""""""""""""""""""
@@ -222,4 +225,48 @@ let g:vim_markdown_frontmatter=1
 " Editorconfig exceptions
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
+
+" Markdown auto-commands
+""""""""""""""""""""""""
+autocmd FileType markdown setlocal wrap linebreak nolist
+
+" Ruby Configurations
+"""""""""""""""""""""
+autocmd FileType ruby set shiftwidth=2 tabstop=2
+
+" PHP Configurations
+""""""""""""""""""""
+autocmd FileType php setlocal colorcolumn=100
+autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+
+
+" HTML configurations
+"""""""""""""""""""""
+autocmd FileType html setlocal expandtab
+
+" Coffeescript configurations
+"""""""""""""""""""""""""""""
+auto BufNewFile,BufReadPost *.coffee setlocal foldmethod=indent
+au BufNewFile,BufReadPost *.coffee setlocal shiftwidth=2 expandtab
+
+
+" css configurations
+"""""""""""""""""""""""""""
+au BufNewFile,BufReadPost *.css setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+
+
+" scss configurations
+"""""""""""""""""""""""""""
+au BufNewFile,BufReadPost *.scss setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+
+
+" Javascript configurations
+"""""""""""""""""""""""""""
+au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+
+" Get jinja filetype selection working correctly for *.jinja.html files.
+au BufNewFile,BufReadPost *.jinja.html setlocal filetype=htmljinja
+
+"Hopefully fix mode delay
+""""""""""""""""""""""""""
 set ttimeoutlen=0
