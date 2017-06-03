@@ -35,8 +35,9 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'tpope/vim-liquid'
 Plug 'chriskempson/base16-vim'
 
-
-
+" Javascript stuff
+Plug 'pangloss/vim-javascript'
+let g:javascript_plugin_jsdoc = 1
 
 " REStructuredText
 Plug 'Rykka/riv.vim'
@@ -59,6 +60,7 @@ Plug '29decibel/codeschool-vim-theme'
 Plug 'morhetz/gruvbox'
 Plug 'reedes/vim-colors-pencil'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'joshdick/onedark.vim'
 
 set laststatus=2
 
@@ -70,7 +72,7 @@ set background=dark
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_comments=1
 let g:gruvbox_italicize_strings=1
-colorscheme gruvbox
+colorscheme onedark
 
 "let base16colorspace=256
 "colorscheme base16-eighties
@@ -93,12 +95,12 @@ vnoremap / /\v
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Special characters for hilighting non-priting spaces/tabs/etc.
-set list listchars=tab:»\ ,trail:·
+set list listchars=tab:»\ ,trail:·,space:·,eol:¬
 
 " Where swap and backup files go
-set backupdir=~/.config/nvim/backup_files//
-set directory=~/.config/nvim/swap_files//
-set undodir=~/.config/nvim/undo_files//
+" set backupdir=~/.config/nvim/backup_files//
+" set directory=~/.config/nvim/swap_files//
+" set undodir=~/.config/nvim/undo_files//
 
 hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 hi SpellBad ctermfg=15 ctermbg=9 guifg=White guibg=Red
@@ -164,6 +166,7 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_disabled_filetypes=['html', 'jinja']
 let g:syntastic_python_flake8_args='--ignore=E501,E128'
 
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
 " Airline configuration
 """""""""""""""""""""""
@@ -196,8 +199,8 @@ endif
 set list                " Show problematic characters.
 
 " Highlight all tabs and trailing whitespace characters.
-highlight ExtraWhitespace ctermbg=red guibg=red
- match ExtraWhitespace /\s\+$\|\t/
+" highlight ExtraWhitespace ctermbg=red guibg=red
+" match ExtraWhitespace /\s\+$\|\t/
 
  " Configure vim-pencil
 let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
@@ -270,3 +273,9 @@ au BufNewFile,BufReadPost *.jinja.html setlocal filetype=htmljinja
 "Hopefully fix mode delay
 """"""""""""""""""""""""""
 set ttimeoutlen=0
+
+
+"Hopefully fix mode delay
+""""""""""""""""""""""""""
+set mouse=
+
